@@ -1,4 +1,5 @@
-import { Container, Content, Background } from "./styles";
+import { Container, Content, Background, AnimatedContainer } from "./styles";
+import { Link } from "react-router-dom";
 import LogoImg from "../../assets/LogoImg.svg";
 import { FiLogIn, FiMail, FiLock } from "react-icons/fi";
 import { Form } from "@unform/web";
@@ -48,6 +49,8 @@ export function SignIn() {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationError(err);
           formRef.current?.setErrors(errors);
+
+          return;
         }
         addToast({
           type: "error",
@@ -62,23 +65,25 @@ export function SignIn() {
   return (
     <Container>
       <Content>
-        <img src={LogoImg} alt="GoBarber" />
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Faça seu Login</h1>
-          <Input name="email" icon={FiMail} placeholder="E-mail" />
-          <Input
-            name="password"
-            icon={FiLock}
-            type="password"
-            placeholder="Senha"
-          />
-          <Button>Entrar</Button>
-          <a href="forgot">Esqueci minha senha</a>
-        </Form>
-        <a href="">
-          <FiLogIn />
-          Criar conta
-        </a>
+        <AnimatedContainer>
+          <img src={LogoImg} alt="GoBarber" />
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Faça seu Login</h1>
+            <Input name="email" icon={FiMail} placeholder="E-mail" />
+            <Input
+              name="password"
+              icon={FiLock}
+              type="password"
+              placeholder="Senha"
+            />
+            <Button>Entrar</Button>
+            <a href="forgot">Esqueci minha senha</a>
+          </Form>
+          <Link to="/signup">
+            <FiLogIn />
+            Criar conta
+          </Link>
+        </AnimatedContainer>
       </Content>
       <Background />
     </Container>
