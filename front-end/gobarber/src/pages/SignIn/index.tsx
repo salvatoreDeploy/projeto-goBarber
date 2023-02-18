@@ -1,5 +1,5 @@
 import { Container, Content, Background, AnimatedContainer } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogoImg from "../../assets/LogoImg.svg";
 import { FiLogIn, FiMail, FiLock } from "react-icons/fi";
 import { Form } from "@unform/web";
@@ -22,6 +22,7 @@ export function SignIn() {
   const formRef = useRef<FormHandles>(null);
   const { signIn } = useAuth();
   const { addToast } = useToast();
+  const navigate = useNavigate();
 
   //console.log(auth);
   //console.log(formRef);
@@ -45,6 +46,8 @@ export function SignIn() {
           email: data.email,
           password: data.password,
         });
+
+        navigate("/dashboard");
       } catch (err: any) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationError(err);
@@ -59,7 +62,7 @@ export function SignIn() {
         });
       }
     },
-    [signIn]
+    [signIn, navigate]
   );
 
   return (
