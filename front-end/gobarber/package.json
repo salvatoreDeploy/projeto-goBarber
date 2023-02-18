@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^9.6.1",
     "@types/yup": "^0.32.0",
     "@unform/core": "^2.1.6",
     "@unform/web": "^2.1.6",

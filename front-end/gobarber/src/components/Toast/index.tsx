@@ -5,6 +5,7 @@ import { Container } from "./styles";
 
 interface ToastProps {
   message: ToastMessage;
+  style: object;
 }
 
 const icons = {
@@ -13,7 +14,7 @@ const icons = {
   success: <FiCheck size={24} />,
 };
 
-export function Toast({ message }: ToastProps) {
+export function Toast({ message, style }: ToastProps) {
   const { removeToast } = useToast();
 
   useEffect(() => {
@@ -27,7 +28,11 @@ export function Toast({ message }: ToastProps) {
   }, [removeToast, message.id]);
 
   return (
-    <Container type={message.type} hasDescription={!!message.description}>
+    <Container
+      type={message.type}
+      hasDescription={!!message.description}
+      style={style}
+    >
       {icons[message.type || "info"]}
 
       <div>
