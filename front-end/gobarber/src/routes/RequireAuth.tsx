@@ -4,5 +4,5 @@ import { useAuth } from "../hook/AuthContext";
 export function RequireAuth() {
   const { user } = useAuth();
 
-  return user ? <Outlet /> : <Navigate to="/" state={location} />;
+  return user ? <Outlet /> : <Navigate to="/" state={{ from: location }} />;
 }
