@@ -1083,6 +1083,11 @@
   resolved "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.5.tgz"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@expo-google-fonts/roboto-slab@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/roboto-slab/-/roboto-slab-0.2.3.tgz#5497f37224af3f75c20b4749c6c6bafdf37cc54d"
+  integrity sha512-CnjetZ1wG0Vp1gH63GvUMo1ly0Agd+9GsKro24oB2cqpPS6hKzKOnT0btsYfGUB2/DqngB5AN7e56F+XLf4MCg==
+
 "@expo/bunyan@4.0.0", "@expo/bunyan@^4.0.0":
   version "4.0.0"
   resolved "https://registry.npmjs.org/@expo/bunyan/-/bunyan-4.0.0.tgz"
