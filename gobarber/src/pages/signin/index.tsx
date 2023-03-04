@@ -1,5 +1,7 @@
 import React from "react";
 import { Image } from "react-native";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 import { Container, Title } from "./style";
 
@@ -9,7 +11,10 @@ export function SignIn() {
   return (
     <Container>
       <Image source={logoImg} />
-      <Title>Faça seu Logon</Title>
+      <Title>Faça seu Login</Title>
+      <Input />
+      <Input />
+      <Button onPress={()=> {}}>Entrar</Button>
     </Container>
   );
 }
